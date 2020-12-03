@@ -29,7 +29,7 @@ export const Editor = () => {
   return (
     <section>
       <p>
-        <h1>Todo List</h1>
+        <h1>Todo</h1>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
