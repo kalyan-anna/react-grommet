@@ -52,8 +52,14 @@ const NewTaskModal: React.FC<NewTaskModalProps> = ({ onClose }) => {
               htmlFor="title-input-id"
               label="Title"
               required
+              style={{ margin: '20px 0' }}
             >
-              <TextInput id="title-input-id" name="title" />
+              <TextInput
+                id="title-input-id"
+                name="title"
+                autoFocus={true}
+                placeholder="e.g Running for 2km"
+              />
             </FormField>
             <PrioritySelection />
           </CardBody>

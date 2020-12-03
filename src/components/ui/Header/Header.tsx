@@ -1,6 +1,7 @@
 import React from 'react';
-import { Anchor, Header as GrommetHeader, Heading } from 'grommet';
+import { Anchor, Header as GrommetHeader, Heading, Text } from 'grommet';
 import { Logo } from '../Logo/Logo';
+import { Link } from 'gatsby';
 
 interface HeaderProps {
   title: string;
@@ -20,16 +21,17 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
       pad="medium"
     >
       <Heading size="small">
-        <Anchor
-          href="/"
+        <Link
+          to="/"
           style={{
             textDecoration: `none`,
           }}
-          color="brand"
         >
           <Logo style={{ marginRight: '10px' }} />
-          <span>{title}</span>
-        </Anchor>
+          <Text color="brand" size="xlarge">
+            {title}
+          </Text>
+        </Link>
       </Heading>
     </GrommetHeader>
   );

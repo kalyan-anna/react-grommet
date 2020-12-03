@@ -1,8 +1,7 @@
 import React from 'react';
 import { SEO } from '../SEO/SEO';
 import { Footer, Header } from '@ui';
-import { Normalize } from 'styled-normalize';
-import { Box, Grommet, Main } from 'grommet';
+import { Grommet, Main } from 'grommet';
 import { theme } from '@themes';
 import { graphql, useStaticQuery } from 'gatsby';
 
@@ -37,10 +36,9 @@ export const AppLayout: React.FC<AppLayoutProperties> = ({
         flexDirection: 'column',
       }}
     >
-      <Normalize />
       <SEO title={title} />
       <Header title={appTitle} />
-      <Main pad="large" flex overflow="auto">
+      <Main pad="small" flex overflow="auto">
         {children}
       </Main>
       <Footer title={appTitle} />

@@ -1,6 +1,14 @@
 import React from 'react';
-import { Anchor, Box, Footer as GommetFooter, Nav, Text } from 'grommet';
+import {
+  Anchor,
+  Box,
+  Button,
+  Footer as GommetFooter,
+  Nav,
+  Text,
+} from 'grommet';
 import { Logo } from '../Logo/Logo';
+import { Link } from 'gatsby';
 
 interface FooterProps {
   title: string;
@@ -9,8 +17,8 @@ interface FooterProps {
 const FooterContent = () => {
   return (
     <Nav direction="row" pad="medium">
-      <Anchor href="/contact">Contact</Anchor>
-      <Anchor href="/about">About</Anchor>
+      <Button as={Link} to="/contact" label="Contact"></Button>
+      <Button as={Link} to="/about" label="About"></Button>
     </Nav>
   );
 };
