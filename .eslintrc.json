@@ -1,65 +1,72 @@
 {
-    "env": {
-        "browser": true,
-        "es6": true,
-        "node": true,
-        "jest": true
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:promise/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:unicorn/recommended",
+    "prettier",
+    "prettier/react",
+    "prettier/@typescript-eslint",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "createDefaultProgram": true,
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:sonarjs/recommended",
-        "plugin:promise/recommended",
-        "plugin:react/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:@typescript-eslint/recommended-requiring-type-checking",
-        "plugin:unicorn/recommended",
-        "prettier",
-        "prettier/react",
-        "prettier/@typescript-eslint",
-        "plugin:prettier/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "project": "./tsconfig.json",
-        "createDefaultProgram": true,
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "promise",
+    "sonarjs",
+    "prettier",
+    "jest",
+    "jsx-a11y",
+    "import"
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
     },
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "promise",
-        "sonarjs",
-        "prettier",
-        "jest",
-        "jsx-a11y",
-        "import"
-    ],
-    "settings": {
-        "react": {
-            "version": "detect"
-        },
-        "import/resolver": {
-            "typescript": {}
-        }
-    },
-    "rules": {
-        "prefer-const": "error",
-        "@typescript-eslint/no-unused-vars": "off",
-        "@typescript-eslint/no-unused-params": "off",
-        "prettier/prettier": [
-            "error",
-            {
-                "endOfLine": "auto"
-            }
-        ],
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "warn",
-        "max-lines-per-function": ["error", 40],
-        "sonarjs/cognitive-complexity": ["error", 5]
+    "import/resolver": {
+      "typescript": {}
     }
+  },
+  "rules": {
+    "prefer-const": "error",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-unused-params": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "max-lines-per-function": ["error", 100],
+    "sonarjs/cognitive-complexity": ["error", 5],
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "react/prop-types": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "unicorn/filename-case": "off",
+    "@typescript-eslint/no-unsafe-call": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off"
+  }
 }
