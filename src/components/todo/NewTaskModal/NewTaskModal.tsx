@@ -41,18 +41,17 @@ const NewTaskModal: React.FC<NewTaskModalProps> = ({ onClose }) => {
           onSubmit={() => handleSubmit()}
           validate="blur"
         >
-          <CardHeader pad="medium" justify="center">
+          <CardHeader pad="small" justify="center">
             <Heading margin="none" level="3" color="brand">
               New Task
             </Heading>
           </CardHeader>
-          <CardBody pad="medium">
+          <CardBody pad="small">
             <FormField
               name="title"
               htmlFor="title-input-id"
               label="Title"
               required
-              style={{ margin: '20px 0' }}
             >
               <TextInput
                 id="title-input-id"

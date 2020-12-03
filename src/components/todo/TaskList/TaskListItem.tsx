@@ -50,9 +50,9 @@ const TaskListItem: React.FC<TaskListItemProps> = ({ todo }) => {
         />
         <Button
           icon={<Trash color="black" />}
-          hoverIndicator
           size="small"
           onClick={handleDelete}
+          hoverIndicator={true}
         />
       </CardFooter>
     </Card>

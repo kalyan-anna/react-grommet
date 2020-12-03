@@ -19,7 +19,7 @@ export const Editor = () => {
         size="medium"
         type="button"
         onClick={() => setShowNewTask(true)}
-        margin="medium"
+        margin="small"
       />
       {showNewTask && <NewTaskModal onClose={() => setShowNewTask(false)} />}
     </Box>

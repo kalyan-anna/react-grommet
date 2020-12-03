@@ -17,8 +17,22 @@ interface FooterProps {
 const FooterContent = () => {
   return (
     <Nav direction="row" pad="medium">
-      <Button as={Link} to="/contact" label="Contact"></Button>
-      <Button as={Link} to="/about" label="About"></Button>
+      <Button
+        as={Link}
+        to="/contact"
+        label="Contact"
+        plain={true}
+        color="brand"
+        hoverIndicator={true}
+      ></Button>
+      <Button
+        as={Link}
+        to="/about"
+        label="About"
+        plain={true}
+        color="brand"
+        hoverIndicator={true}
+      ></Button>
     </Nav>
   );
 };
