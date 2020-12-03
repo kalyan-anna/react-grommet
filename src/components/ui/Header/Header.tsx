@@ -1,9 +1,12 @@
 import React from 'react';
 import { Anchor, Header as GrommetHeader, Heading } from 'grommet';
-import { Link } from 'gatsby';
 import { Logo } from '../Logo/Logo';
 
-const Header = () => {
+interface HeaderProps {
+  title: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <GrommetHeader
       background="light-2"
@@ -18,7 +21,6 @@ const Header = () => {
     >
       <Heading size="small">
         <Anchor
-          as={Link}
           href="/"
           style={{
             textDecoration: `none`,
@@ -26,7 +28,7 @@ const Header = () => {
           color="brand"
         >
           <Logo style={{ marginRight: '10px' }} />
-          <span>Do-Do</span>
+          <span>{title}</span>
         </Anchor>
       </Heading>
     </GrommetHeader>

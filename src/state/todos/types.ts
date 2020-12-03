@@ -4,10 +4,10 @@ export const UPDATE_ITEM = 'todos/updateItem';
 export const TOGGLE_STATUS = 'todos/toggleStatus';
 
 export enum PriorityEnum {
-  URGENT = '4',
-  HIGH = '3',
-  MEDIUM = '2',
-  LOW = '1',
+  URGENT = 4,
+  HIGH = 3,
+  MEDIUM = 2,
+  LOW = 1,
 }
 
 export enum TodoStatusEnum {
@@ -20,7 +20,7 @@ export interface Todo {
   title: string;
   description?: string;
   priority?: PriorityEnum;
-  createdAt?: Date;
+  createdAt?: string;
   status?: TodoStatusEnum;
 }
 

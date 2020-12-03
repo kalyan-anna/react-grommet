@@ -1,22 +1,21 @@
 import React from 'react';
 import { Anchor, Box, Footer as GommetFooter, Nav, Text } from 'grommet';
 import { Logo } from '../Logo/Logo';
-import { Link } from 'gatsby';
+
+interface FooterProps {
+  title: string;
+}
 
 const FooterContent = () => {
   return (
     <Nav direction="row" pad="medium">
-      <Anchor as={Link} href="/contact">
-        Contact
-      </Anchor>
-      <Anchor as={Link} href="/about">
-        About
-      </Anchor>
+      <Anchor href="/contact">Contact</Anchor>
+      <Anchor href="/about">About</Anchor>
     </Nav>
   );
 };
 
-const Footer = () => {
+const Footer: React.FC<FooterProps> = ({ title }) => {
   return (
     <>
       <GommetFooter background="dark-1" pad="large">
@@ -29,7 +28,7 @@ const Footer = () => {
         <Box direction="row-responsive" gap="small">
           <Logo />
           <Text alignSelf="center" color="brand">
-            Do-Do
+            {title}
           </Text>
         </Box>
         <Text textAlign="center" size="small">

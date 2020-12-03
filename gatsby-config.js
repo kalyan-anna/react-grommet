@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/restrict-template-expressions */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Styled-Component`,
+    title: `DoDoist`,
     description: `Sample gatsby styled-component project`,
     author: `Kalyan Annamalai`,
   },

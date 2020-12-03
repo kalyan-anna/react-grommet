@@ -13,7 +13,7 @@ export const addTodoItem = createAction(ADD_ITEM, (todo: Todo) => ({
   payload: {
     ...todo,
     id: nanoid(),
-    createdAt: new Date(),
+    createdAt: new Date().toISOString(),
     status: TodoStatusEnum.Active,
     priority: todo.priority || PriorityEnum.LOW,
   } as Todo,

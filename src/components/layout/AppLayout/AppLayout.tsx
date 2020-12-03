@@ -2,8 +2,9 @@ import React from 'react';
 import { SEO } from '../SEO/SEO';
 import { Footer, Header } from '@ui';
 import { Normalize } from 'styled-normalize';
-import { Box, Grommet } from 'grommet';
+import { Box, Grommet, Main } from 'grommet';
 import { theme } from '@themes';
+import { graphql, useStaticQuery } from 'gatsby';
 
 type AppLayoutProperties = {
   title: string;
@@ -13,6 +14,20 @@ export const AppLayout: React.FC<AppLayoutProperties> = ({
   title,
   children,
 }) => {
+  const { site } = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `,
+  );
+
+  const appTitle: string = site.siteMetadata?.title;
+
   return (
     <Grommet
       theme={theme}
@@ -24,11 +39,11 @@ export const AppLayout: React.FC<AppLayoutProperties> = ({
     >
       <Normalize />
       <SEO title={title} />
-      <Header />
-      <Box as="main" pad="medium" flex overflow="auto">
+      <Header title={appTitle} />
+      <Main pad="large" flex overflow="auto">
         {children}
-      </Box>
-      <Footer />
+      </Main>
+      <Footer title={appTitle} />
     </Grommet>
   );
 };
