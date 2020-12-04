@@ -11,10 +11,8 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 const FormattedText = styled.span`
-  text-decoration: ${props => {
-    console.log('props:', props);
-    return props.status === TodoStatusEnum.Completed ? 'line-through' : '';
-  }};
+  text-decoration: ${props =>
+    props.status === TodoStatusEnum.Completed ? 'line-through' : ''};
 `;
 
 interface TaskListItemProps {

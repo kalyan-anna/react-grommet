@@ -28,7 +28,6 @@ const TaskList = () => {
     </Text>
   );
 
-  console.log(list);
   return (
     <Box direction="column" width="medium" margin="small">
       {noTaskMessage}

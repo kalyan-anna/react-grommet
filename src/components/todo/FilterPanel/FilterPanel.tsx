@@ -24,12 +24,7 @@ const RichPanel = ({ children, label }: any) => {
   const [hovering, setHovering] = React.useState(false);
 
   const renderPanelTitle = () => (
-    <Box
-      direction="row"
-      align="center"
-      gap="small"
-      pad={{ horizontal: 'small' }}
-    >
+    <Box direction="row" align="center" gap="small" pad="small">
       <Filter />
       <Heading level={4} color={hovering ? 'dark-1' : 'dark-3'}>
         {label}
@@ -57,11 +52,17 @@ const FilterPanel = () => {
   const dispatch = useDispatch();
 
   const handleFilterChange = (nextValue: UIState['filters']) => {
-    if (nextValue.priority && filterValue.priority !== nextValue.priority) {
-      dispatch(filterByPriority(nextValue.priority));
+    if (
+      nextValue.filterPriority &&
+      filterValue.filterPriority !== nextValue.filterPriority
+    ) {
+      dispatch(filterByPriority(nextValue.filterPriority));
     }
-    if (nextValue.status && filterValue.status !== nextValue.status) {
-      dispatch(filterByStatus(nextValue.status));
+    if (
+      nextValue.filterStatus &&
+      filterValue.filterStatus !== nextValue.filterStatus
+    ) {
+      dispatch(filterByStatus(nextValue.filterStatus));
     }
   };
 
@@ -88,11 +89,17 @@ const FilterPanel = () => {
               <Text color="dark-1" margin="small" weight="bold">
                 Priority
               </Text>
-              <PrioritySelection />
+              <PrioritySelection
+                name="filterPriority"
+                value={filterValue.filterPriority}
+              />
               <Text color="dark-1" margin="small" weight="bold">
                 Status
               </Text>
-              <StatusSelection />
+              <StatusSelection
+                name="filterStatus"
+                value={filterValue.filterStatus}
+              />
               <Button
                 type="reset"
                 label="Clear"

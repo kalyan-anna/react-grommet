@@ -46,7 +46,7 @@ const NewTaskModal: React.FC<NewTaskModalProps> = ({ onClose }) => {
               New Task
             </Heading>
           </CardHeader>
-          <CardBody pad="small">
+          <CardBody pad="medium">
             <FormField
               name="title"
               htmlFor="title-input-id"

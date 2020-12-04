@@ -9,10 +9,10 @@ const initialState: UIState = {
 export const uiReducer = createReducer<UIState>(initialState, builder => {
   builder
     .addCase(filterByStatus, (state, { payload }) => {
-      state.filters.status = payload;
+      state.filters.filterStatus = payload;
     })
     .addCase(filterByPriority, (state, { payload }) => {
-      state.filters.priority = payload;
+      state.filters.filterPriority = payload;
     })
     .addCase(clearFilters, state => {
       state.filters = initialState.filters;

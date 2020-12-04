@@ -6,7 +6,7 @@ export const CLEAR_FILTERS = 'ui/clearFilters';
 
 export interface UIState {
   filters: {
-    status?: TodoStatusEnum;
-    priority?: PriorityEnum;
+    filterStatus?: TodoStatusEnum;
+    filterPriority?: PriorityEnum;
   };
 }
