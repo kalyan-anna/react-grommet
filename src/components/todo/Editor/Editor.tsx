@@ -3,15 +3,18 @@ import { Box, Button, Heading } from 'grommet';
 import { Add } from 'grommet-icons';
 import { NewTaskModal } from '../NewTaskModal/NewTaskModal';
 import { TaskList } from '../TaskList/TaskList';
+import { FilterPanel } from '../FilterPanel/FilterPanel';
 
 export const Editor = () => {
   const [showNewTask, setShowNewTask] = React.useState(false);
 
   return (
-    <Box align="center" justify="center">
+    <Box align="center" justify="center" overflow="scroll">
       <Heading size="small" level={2} textAlign="start">
         Today&apos;s Task
       </Heading>
+      <FilterPanel />
+
       <TaskList />
       <Button
         icon={<Add />}
@@ -21,6 +24,7 @@ export const Editor = () => {
         onClick={() => setShowNewTask(true)}
         margin="small"
       />
+
       {showNewTask && <NewTaskModal onClose={() => setShowNewTask(false)} />}
     </Box>
   );

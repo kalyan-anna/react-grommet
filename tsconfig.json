@@ -44,6 +44,7 @@
     "baseUrl": "src" /* Base directory to resolve non-absolute module names. */,
     "paths": {
       "@state/todos": ["state/todos/index.ts"],
+      "@state/ui": ["state/ui/index.ts"],
       "@ui": ["components/ui/index.ts"],
       "@layout": ["components/layout/index.ts"],
       "@todo": ["components/todo/index.ts"],

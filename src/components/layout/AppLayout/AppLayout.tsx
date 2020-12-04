@@ -38,9 +38,7 @@ export const AppLayout: React.FC<AppLayoutProperties> = ({
     >
       <SEO title={title} />
       <Header title={appTitle} />
-      <Main pad="small" flex overflow="auto">
-        {children}
-      </Main>
+      <Main pad="small">{children}</Main>
       <Footer title={appTitle} />
     </Grommet>
   );
