@@ -6,8 +6,8 @@ export const CLEAR_FILTERS = 'ui/clearFilters';
 export const SORT_TODOS = 'ui/sortTodos';
 
 export enum SortTypeEnum {
-  NAME,
-  PRIORITY,
+  NAME = 'Name',
+  PRIORITY = 'PRIORITY',
 }
 
 export interface UIState {
