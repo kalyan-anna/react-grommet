@@ -10,6 +10,11 @@
 
 Sample project based on styled-components
 
+### Cloud
+The application is deployed in cloud.  
+https://gatsbystyled.z8.web.core.windows.net/
+
+
 ### Instructions to Run
 
 npm run install  
