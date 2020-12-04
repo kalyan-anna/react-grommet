@@ -1,5 +1,6 @@
 import {
   deleteTodoItem,
+  PriorityEnum,
   Todo,
   TodoStatusEnum,
   toggleItemStatus,
@@ -9,6 +10,7 @@ import React from 'react';
 import { Trash } from 'grommet-icons';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import upperFirst from 'lodash/upperFirst';
 
 const FormattedText = styled.span`
   text-decoration: ${props =>
@@ -35,6 +37,11 @@ const TaskListItem: React.FC<TaskListItemProps> = ({ todo }) => {
       <CardBody border={{ color: 'border', size: 'xsmall', side: 'bottom' }}>
         <Text color="brand" weight="bold" style={{ padding: '10px 10px' }}>
           <FormattedText status={todo.status}>{todo.title}</FormattedText>
+        </Text>
+        <Text weight="bold" style={{ padding: '10px 10px' }}>
+          <FormattedText status={todo.status}>
+            Priority: {upperFirst(PriorityEnum[todo.priority!].toLowerCase())}{' '}
+          </FormattedText>
         </Text>
       </CardBody>
       <CardFooter>
