@@ -1,9 +1,15 @@
 import { createReducer } from '@reduxjs/toolkit';
-import { clearFilters, filterByPriority, filterByStatus } from './actions';
+import {
+  clearFilters,
+  filterByPriority,
+  filterByStatus,
+  sortTodos,
+} from './actions';
 import { UIState } from './types';
 
 const initialState: UIState = {
   filters: {},
+  sort: {},
 };
 
 export const uiReducer = createReducer<UIState>(initialState, builder => {
@@ -16,5 +22,8 @@ export const uiReducer = createReducer<UIState>(initialState, builder => {
     })
     .addCase(clearFilters, state => {
       state.filters = initialState.filters;
+    })
+    .addCase(sortTodos, (state, { payload }) => {
+      state.sort.type = payload;
     });
 });

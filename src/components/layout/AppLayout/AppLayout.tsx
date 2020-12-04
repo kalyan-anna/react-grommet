@@ -4,6 +4,7 @@ import { Footer, Header } from '@ui';
 import { Grommet, Main } from 'grommet';
 import { theme } from '@themes';
 import { graphql, useStaticQuery } from 'gatsby';
+import '../../../themes/global.css';
 
 type AppLayoutProperties = {
   title: string;

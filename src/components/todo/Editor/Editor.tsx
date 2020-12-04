@@ -4,6 +4,7 @@ import { Add } from 'grommet-icons';
 import { NewTaskModal } from '../NewTaskModal/NewTaskModal';
 import { TaskList } from '../TaskList/TaskList';
 import { FilterPanel } from '../FilterPanel/FilterPanel';
+import { SortPanel } from '../SortPanel/SortPanel';
 
 export const Editor = () => {
   const [showNewTask, setShowNewTask] = React.useState(false);
@@ -14,7 +15,7 @@ export const Editor = () => {
         Today&apos;s Task
       </Heading>
       <FilterPanel />
-
+      <SortPanel />
       <TaskList />
       <Button
         icon={<Add />}
