@@ -9,6 +9,6 @@ module.exports = {
   },
   moduleNameMapper: {
     '@state/todos': ['<rootDir>/src/state/todos/index.ts'],
-    '@state/ui': ['<rootDir>/src/state/ui/index.ts'],
+    '@state/filter': ['<rootDir>/src/state/filter/index.ts'],
   },
 };

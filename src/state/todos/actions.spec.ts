@@ -81,6 +81,7 @@ describe('todo actions', () => {
       title: 'Run 2km',
       priority: PriorityEnum.LOW,
     } as Todo);
+
     expect(result).toMatchInlineSnapshot(`
       Object {
         "payload": Object {

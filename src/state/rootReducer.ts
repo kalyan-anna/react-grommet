@@ -1,10 +1,10 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import { todosReducer } from './todos/reducer';
-import { uiReducer } from './ui';
+import { filterReducer } from './filter';
 
 const rootReducer = combineReducers({
   todos: todosReducer,
-  ui: uiReducer,
+  filter: filterReducer,
 });
 
 export default rootReducer;

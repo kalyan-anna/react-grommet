@@ -11,13 +11,13 @@ import {
 import { Filter } from 'grommet-icons';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { uiSelectors } from '@state/ui';
+import { filterSelectors } from 'state/filter';
 import {
   clearFilters,
   filterByPriority,
   filterByStatus,
-  UIState,
-} from 'state/ui';
+  FilterState,
+} from 'state/filter';
 import { PrioritySelection, StatusSelection } from '@ui';
 
 const RichPanel = ({ children, label }: any) => {
@@ -46,23 +46,20 @@ const RichPanel = ({ children, label }: any) => {
 };
 
 const FilterPanel = () => {
-  const filterValue: UIState['filters'] = useSelector(
-    uiSelectors.selectFilters,
+  const filterValue: FilterState['filters'] = useSelector(
+    filterSelectors.selectFilters,
   );
   const dispatch = useDispatch();
 
-  const handleFilterChange = (nextValue: UIState['filters']) => {
+  const handleFilterChange = (nextValue: FilterState['filters']) => {
     if (
-      nextValue.filterPriority &&
-      filterValue.filterPriority !== nextValue.filterPriority
+      nextValue.priorities &&
+      filterValue.priorities !== nextValue.priorities
     ) {
-      dispatch(filterByPriority(nextValue.filterPriority));
+      dispatch(filterByPriority(nextValue.priorities));
     }
-    if (
-      nextValue.filterStatus &&
-      filterValue.filterStatus !== nextValue.filterStatus
-    ) {
-      dispatch(filterByStatus(nextValue.filterStatus));
+    if (nextValue.status && filterValue.status !== nextValue.status) {
+      dispatch(filterByStatus(nextValue.status));
     }
   };
 
@@ -91,15 +88,12 @@ const FilterPanel = () => {
               </Text>
               <PrioritySelection
                 name="filterPriority"
-                value={filterValue.filterPriority}
+                value={filterValue.priorities}
               />
               <Text color="dark-1" margin="small" weight="bold">
                 Status
               </Text>
-              <StatusSelection
-                name="filterStatus"
-                value={filterValue.filterStatus}
-              />
+              <StatusSelection name="filterStatus" value={filterValue.status} />
               <Button
                 type="reset"
                 label="Clear"

@@ -1,5 +1,5 @@
 import { Todo, todosSelectors } from '@state/todos';
-import { sortTodos, SortTypeEnum } from '@state/ui';
+import { sortTodos, SortTypeEnum } from 'state/filter';
 import { Box, Button } from 'grommet';
 import { Sort } from 'grommet-icons';
 import React from 'react';
