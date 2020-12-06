@@ -14,6 +14,9 @@ const mockedUniqueId = uniqueId as jest.Mock;
 describe('todo actions', () => {
   beforeAll(() => {
     advanceTo(new Date(2020, 11, 27, 0, 0, 0));
+  });
+
+  beforeEach(() => {
     mockedUniqueId.mockReturnValue('1');
   });
 

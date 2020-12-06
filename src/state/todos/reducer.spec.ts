@@ -14,16 +14,19 @@ import { advanceTo, clear } from 'jest-date-mock';
 jest.mock('lodash/uniqueId');
 const mockedUniqueId = uniqueId as jest.Mock;
 
-beforeAll(() => {
-  advanceTo(new Date(2020, 11, 27, 0, 0, 0));
-  mockedUniqueId.mockReturnValue('1');
-});
-
-afterAll(() => {
-  clear();
-});
-
 describe('todos reducer', () => {
+  beforeAll(() => {
+    advanceTo(new Date(2020, 11, 27, 0, 0, 0));
+  });
+
+  beforeEach(() => {
+    mockedUniqueId.mockReturnValue('1');
+  });
+
+  afterAll(() => {
+    clear();
+  });
+
   test('should return the initial state', () => {
     expect(todosReducer(undefined, { type: 'Unknown' })).toMatchInlineSnapshot(`
       Object {
