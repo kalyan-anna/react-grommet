@@ -4,10 +4,10 @@ export const UPDATE_ITEM = 'todos/updateItem';
 export const TOGGLE_STATUS = 'todos/toggleStatus';
 
 export enum PriorityEnum {
-  URGENT = 4,
-  HIGH = 3,
-  MEDIUM = 2,
-  LOW = 1,
+  URGENT = 1,
+  HIGH = 2,
+  MEDIUM = 3,
+  LOW = 4,
 }
 
 export enum TodoStatusEnum {

@@ -16,7 +16,6 @@ export const Editor = () => {
       </Heading>
       <FilterPanel />
       <SortPanel />
-      <TaskList />
       <Button
         icon={<Add />}
         label="Add New Task"
@@ -24,7 +23,9 @@ export const Editor = () => {
         type="button"
         onClick={() => setShowNewTask(true)}
         margin="small"
+        primary
       />
+      <TaskList />
 
       {showNewTask && <NewTaskModal onClose={() => setShowNewTask(false)} />}
     </Box>

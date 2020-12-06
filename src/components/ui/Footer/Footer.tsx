@@ -1,14 +1,7 @@
 import React from 'react';
-import {
-  Anchor,
-  Box,
-  Button,
-  Footer as GommetFooter,
-  Nav,
-  Text,
-} from 'grommet';
+import { Box, Footer as GommetFooter, Nav, Text } from 'grommet';
 import { Logo } from '../Logo/Logo';
-import { Link } from 'gatsby';
+import { AnchorLink } from '../AnchorLink/AnchorLink';
 
 interface FooterProps {
   appTitle: string;
@@ -17,22 +10,8 @@ interface FooterProps {
 const FooterContent = () => {
   return (
     <Nav direction="row" pad="medium">
-      <Button
-        as={Link}
-        to="/contact"
-        label="Contact"
-        plain={true}
-        color="brand"
-        hoverIndicator={true}
-      ></Button>
-      <Button
-        as={Link}
-        to="/about"
-        label="About"
-        plain={true}
-        color="brand"
-        hoverIndicator={true}
-      ></Button>
+      <AnchorLink to="/contact" label="Contact" color="brand"></AnchorLink>
+      <AnchorLink to="/about" label="About" color="brand"></AnchorLink>
     </Nav>
   );
 };

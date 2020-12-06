@@ -50,15 +50,21 @@ const FilterPanel = () => {
   );
   const dispatch = useDispatch();
 
-  const handleFilterChange = (nextValue: FilterState['filters']) => {
+  const handleFilterChange = (nextValue: any) => {
     if (
-      nextValue.priorities &&
-      filterValue.priorities !== nextValue.priorities
+      nextValue.filterPriority &&
+      (!filterValue.priorities ||
+        (filterValue.priorities &&
+          filterValue.priorities[0] !== nextValue.filterPriority))
     ) {
-      dispatch(filterByPriority(nextValue.priorities));
+      dispatch(filterByPriority([nextValue.filterPriority]));
     }
-    if (nextValue.status && filterValue.status !== nextValue.status) {
-      dispatch(filterByStatus(nextValue.status));
+    if (
+      nextValue.filterStatus &&
+      (!filterValue.status ||
+        (filterValue.status && filterValue.status !== nextValue.filterStatus))
+    ) {
+      dispatch(filterByStatus([nextValue.filterStatus]));
     }
   };
 
@@ -87,12 +93,15 @@ const FilterPanel = () => {
               </Text>
               <PrioritySelection
                 name="filterPriority"
-                value={filterValue.priorities}
+                value={filterValue.priorities && filterValue.priorities[0]}
               />
               <Text color="dark-1" margin="small" weight="bold">
                 Status
               </Text>
-              <StatusSelection name="filterStatus" value={filterValue.status} />
+              <StatusSelection
+                name="filterStatus"
+                value={filterValue.status && filterValue.status[0]}
+              />
               <Button
                 type="reset"
                 label="Clear"

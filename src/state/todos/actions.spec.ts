@@ -37,7 +37,7 @@ describe('todo actions', () => {
           "createdAt": "2020-12-26T13:00:00.000Z",
           "description": "urgent",
           "id": "1",
-          "priority": 2,
+          "priority": 3,
           "status": "Active",
           "title": "Buy milk",
         }
@@ -51,7 +51,7 @@ describe('todo actions', () => {
         Object {
           "createdAt": "2020-12-26T13:00:00.000Z",
           "id": "1",
-          "priority": 1,
+          "priority": 4,
           "status": "Active",
           "title": "Buy milk",
         }
@@ -89,7 +89,7 @@ describe('todo actions', () => {
       Object {
         "payload": Object {
           "id": "1",
-          "priority": 1,
+          "priority": 4,
           "title": "Run 2km",
         },
         "type": "todos/updateItem",

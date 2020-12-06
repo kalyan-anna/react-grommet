@@ -39,7 +39,7 @@ describe('filter actions', () => {
       expect(filterByPriority([PriorityEnum.URGENT])).toMatchInlineSnapshot(`
         Object {
           "payload": Array [
-            4,
+            1,
           ],
           "type": "filter/filterByPriority",
         }
@@ -51,8 +51,8 @@ describe('filter actions', () => {
         .toMatchInlineSnapshot(`
         Object {
           "payload": Array [
-            4,
             1,
+            4,
           ],
           "type": "filter/filterByPriority",
         }

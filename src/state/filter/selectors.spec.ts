@@ -21,17 +21,17 @@ describe('filterSelectors', () => {
       });
 
       expect(result).toMatchInlineSnapshot(`
-          Object {
-            "priorities": Array [
-              1,
-              4,
-            ],
-            "status": Array [
-              "Active",
-              "Completed",
-            ],
-          }
-        `);
+        Object {
+          "priorities": Array [
+            4,
+            1,
+          ],
+          "status": Array [
+            "Active",
+            "Completed",
+          ],
+        }
+      `);
     });
   });
 

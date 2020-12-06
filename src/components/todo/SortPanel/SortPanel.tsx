@@ -1,5 +1,5 @@
 import { Todo, todosSelectors } from '@state/todos';
-import { sortByName } from '@state/filter';
+import { sortByName, sortByPriority } from '@state/filter';
 import { Box, Button } from 'grommet';
 import { Sort } from 'grommet-icons';
 import React from 'react';
@@ -11,6 +11,10 @@ const SortPanel = () => {
 
   const handleSortByName = () => {
     dispatch(sortByName());
+  };
+
+  const handleSortByPriority = () => {
+    dispatch(sortByPriority());
   };
 
   return (
@@ -27,7 +31,8 @@ const SortPanel = () => {
         icon={<Sort />}
         label="Sort by Priority"
         size="small"
-        disabled={true}
+        disabled={todos.length === 0}
+        onClick={handleSortByPriority}
       />
     </Box>
   );

@@ -46,7 +46,7 @@ describe('todos reducer', () => {
           "1": Object {
             "createdAt": "2020-12-26T13:00:00.000Z",
             "id": "1",
-            "priority": 1,
+            "priority": 4,
             "status": "Active",
             "title": "Buy milk",
           },
@@ -193,7 +193,7 @@ describe('todos reducer', () => {
         Object {
           "createdAt": "2020-12-06T09:05:33.065Z",
           "id": "1",
-          "priority": 4,
+          "priority": 1,
           "status": "Completed",
           "title": "Buy milk 2",
         }

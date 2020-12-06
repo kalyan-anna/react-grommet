@@ -31,7 +31,6 @@ const PrioritySelection: React.FC<PrioritySelectionProps> = ({
       pad="small"
       value={innerValue}
       onChange={(event: any) => {
-        console.log('event:', event.target.value);
         setInnerValue(event.target.value);
       }}
     >
