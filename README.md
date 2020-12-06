@@ -10,16 +10,35 @@
 
 Sample project based on styled-components
 
-### Cloud
-The application is deployed in cloud.  
+## Cloud
+The application is deployed to cloud.  
 https://gatsbystyled.z8.web.core.windows.net/
 
 
-### Instructions to Run
+## Instructions to Run
 
 npm run install  
+
+npm run develop  
+access the application from  
+http://localhost:8000/
+
+OR 
+
 npm run build  
 npm run serve
-
-Access the application from  
+access the application from  
 http://localhost:9000/
+
+## Test  
+npm run test
+
+## Lint
+npm run lint  
+
+## TODO
+Cypress E2E  
+StoryBook  
+UI Improvements  
+Accessibility  
+More UI Unit tests 

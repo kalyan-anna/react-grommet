@@ -1,3 +1,5 @@
+/* eslint-disable  sonarjs/no-duplicate-string */
+
 import { ThemeValue } from 'grommet';
 
 export const theme: ThemeValue = {
@@ -247,7 +249,7 @@ export const theme: ThemeValue = {
       vertical: '4px',
       horizontal: '22px',
     },
-    extend: ['\n      ', null, '\n    '],
+    extend: ['\n      ', undefined, '\n    '],
   },
   calendar: {
     small: {
@@ -291,9 +293,9 @@ export const theme: ThemeValue = {
     icon: {
       extend: [
         '\n        box-sizing: border-box;\n        position: absolute;\n        top: 0px;\n        left: 0px;\n        width: ',
-        null,
+        undefined,
         ';\n        height: ',
-        null,
+        undefined,
         ';\n      ',
       ],
     },
@@ -687,7 +689,7 @@ export const theme: ThemeValue = {
   rangeInput: {
     track: {
       height: '4px',
-      color: [null, ';'],
+      color: [undefined, ';'],
     },
     thumb: {},
   },

@@ -12,8 +12,12 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import upperFirst from 'lodash/upperFirst';
 
+interface FormattedTextProps {
+  status: TodoStatusEnum;
+}
+
 const FormattedText = styled.span`
-  text-decoration: ${props =>
+  text-decoration: ${(props: FormattedTextProps) =>
     props.status === TodoStatusEnum.Completed ? 'line-through' : ''};
 `;
 
@@ -36,10 +40,10 @@ const TaskListItem: React.FC<TaskListItemProps> = ({ todo }) => {
     <Card background="light-2">
       <CardBody border={{ color: 'border', size: 'xsmall', side: 'bottom' }}>
         <Text color="brand" weight="bold" style={{ padding: '10px 10px' }}>
-          <FormattedText status={todo.status}>{todo.title}</FormattedText>
+          <FormattedText status={todo.status!}>{todo.title}</FormattedText>
         </Text>
         <Text weight="bold" style={{ padding: '10px 10px' }}>
-          <FormattedText status={todo.status}>
+          <FormattedText status={todo.status!}>
             Priority: {upperFirst(PriorityEnum[todo.priority!].toLowerCase())}{' '}
           </FormattedText>
         </Text>
