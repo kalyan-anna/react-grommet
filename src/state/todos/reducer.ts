@@ -2,7 +2,7 @@ import { createReducer, PayloadAction } from '@reduxjs/toolkit';
 import {
   addTodoItem,
   deleteTodoItem,
-  toggleItemStatus,
+  toggleTodoStatus,
   updateTodoItem,
 } from './actions';
 import { Todo, TodosState, TodoStatusEnum } from './types';
@@ -33,5 +33,5 @@ export const todosReducer = createReducer<TodosState>(initialState, builder => {
     .addCase(addTodoItem, _upsert)
     .addCase(deleteTodoItem, _remove)
     .addCase(updateTodoItem, _upsert)
-    .addCase(toggleItemStatus, _toggle);
+    .addCase(toggleTodoStatus, _toggle);
 });

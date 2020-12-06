@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const SortPanel = () => {
   const dispatch = useDispatch();
-  const todos: Todo[] = useSelector(todosSelectors.selectTodos);
+  const todos: Todo[] = useSelector(todosSelectors.selectAllTodos);
 
   const handleSortByName = () => {
     dispatch(sortTodos(SortTypeEnum.NAME));

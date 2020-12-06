@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { TaskListItem } from './TaskListItem';
 
 const TaskList = () => {
-  const todos: Todo[] = useSelector(todosSelectors.selectTodos);
+  const todos: Todo[] = useSelector(todosSelectors.selectAllTodos);
 
   const list = todos.length > 0 && (
     <ol>

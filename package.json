@@ -27,6 +27,7 @@
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.16",
     "@types/lodash": "^4.14.165",
     "@types/node": "^14.14.10",
     "@types/react": "^17.0.0",
@@ -41,15 +42,20 @@
     "eslint-config-prettier": "^6.15.0",
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-jest": "^24.1.3",
+    "eslint-plugin-jest-formatting": "^2.0.0",
     "eslint-plugin-prettier": "^3.2.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sonarjs": "^0.5.0",
+    "eslint-plugin-testing-library": "^3.10.1",
     "eslint-plugin-unicorn": "^23.0.0",
+    "jest": "^26.6.3",
+    "jest-date-mock": "^1.0.8",
     "prettier": "2.1.2",
     "promise": "^8.1.0",
     "sonarjs": "^1.0.0",
+    "ts-jest": "^26.4.4",
     "tsconfig-paths-webpack-plugin": "^3.3.0",
     "typescript": "^4.1.2"
   },
@@ -64,7 +70,14 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "lint": "tsc --noEmit && eslint \"src/**/*.{js,jsx,ts,tsx}\" --quiet"
+  },
+  "jest": {
+    "setupFiles": [
+      "jest-date-mock"
+    ]
   }
 }

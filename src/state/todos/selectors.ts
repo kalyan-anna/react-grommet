@@ -5,25 +5,25 @@ import { Todo } from './types';
 
 const selectTodosState = (state: RootState) => state.todos;
 
-const selectTodos = createSelector(
+const selectAllTodos = createSelector(
   selectTodosState,
   uiSelectors.selectFilters,
   uiSelectors.selectSortType,
   (
     { todoMap },
-    filters: UIState['filters'],
+    { filterPriority, filterStatus }: UIState['filters'],
     sortType: SortTypeEnum | undefined,
   ) => {
     return Object.values(todoMap)
       .filter(todo => {
-        if (filters.filterPriority) {
-          return filters.filterPriority === todo.priority ? true : false;
+        if (filterPriority) {
+          return filterPriority === todo.priority ? true : false;
         }
         return true;
       })
       .filter(todo => {
-        if (filters.filterStatus) {
-          return filters.filterStatus === todo.status ? true : false;
+        if (filterStatus) {
+          return filterStatus === todo.status ? true : false;
         }
         return true;
       })
@@ -37,5 +37,5 @@ const selectTodos = createSelector(
 );
 
 export const todosSelectors = {
-  selectTodos,
+  selectAllTodos,
 };

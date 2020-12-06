@@ -3,7 +3,7 @@ import {
   PriorityEnum,
   Todo,
   TodoStatusEnum,
-  toggleItemStatus,
+  toggleTodoStatus,
 } from '@state/todos';
 import { Button, Card, CardBody, CardFooter, CheckBox, Text } from 'grommet';
 import React from 'react';
@@ -29,7 +29,7 @@ const TaskListItem: React.FC<TaskListItemProps> = ({ todo }) => {
   };
 
   const handleToggle = () => {
-    dispatch(toggleItemStatus(todo.id!));
+    dispatch(toggleTodoStatus(todo.id!));
   };
 
   return (

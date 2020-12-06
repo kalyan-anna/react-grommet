@@ -1,4 +1,4 @@
-import { createAction, nanoid } from '@reduxjs/toolkit';
+import { createAction } from '@reduxjs/toolkit';
 import {
   ADD_ITEM,
   DELETE_ITEM,
@@ -8,11 +8,12 @@ import {
   UPDATE_ITEM,
   PriorityEnum,
 } from './types';
+import uniqueId from 'lodash/uniqueId';
 
 export const addTodoItem = createAction(ADD_ITEM, (todo: Todo) => ({
   payload: {
     ...todo,
-    id: nanoid(),
+    id: uniqueId(),
     createdAt: new Date().toISOString(),
     status: TodoStatusEnum.Active,
     priority: todo.priority || PriorityEnum.LOW,
@@ -23,4 +24,4 @@ export const deleteTodoItem = createAction<string>(DELETE_ITEM);
 
 export const updateTodoItem = createAction<Todo>(UPDATE_ITEM);
 
-export const toggleItemStatus = createAction<string>(TOGGLE_STATUS);
+export const toggleTodoStatus = createAction<string>(TOGGLE_STATUS);
