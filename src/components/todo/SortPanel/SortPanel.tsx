@@ -1,5 +1,5 @@
 import { Todo, todosSelectors } from '@state/todos';
-import { sortTodos, SortTypeEnum } from 'state/filter';
+import { sortByName } from '@state/filter';
 import { Box, Button } from 'grommet';
 import { Sort } from 'grommet-icons';
 import React from 'react';
@@ -10,7 +10,7 @@ const SortPanel = () => {
   const todos: Todo[] = useSelector(todosSelectors.selectAllTodos);
 
   const handleSortByName = () => {
-    dispatch(sortTodos(SortTypeEnum.NAME));
+    dispatch(sortByName());
   };
 
   return (

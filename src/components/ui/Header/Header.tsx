@@ -1,13 +1,13 @@
 import React from 'react';
-import { Anchor, Header as GrommetHeader, Heading, Text } from 'grommet';
+import { Header as GrommetHeader, Heading, Text } from 'grommet';
 import { Logo } from '../Logo/Logo';
 import { Link } from 'gatsby';
 
 interface HeaderProps {
-  title: string;
+  appTitle: string;
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: React.FC<HeaderProps> = ({ appTitle }) => {
   return (
     <GrommetHeader
       background="light-2"
@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         >
           <Logo style={{ marginRight: '10px' }} />
           <Text color="brand" size="xlarge">
-            {title}
+            {appTitle}
           </Text>
         </Link>
       </Heading>

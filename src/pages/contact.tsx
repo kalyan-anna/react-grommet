@@ -4,7 +4,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <AppLayout title="Contact">
+    <AppLayout pageTitle="Contact">
       <Box pad="large">
         <Heading margin="small">Contact</Heading>
         <p>

@@ -1,26 +1,16 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { useStaticQuery, graphql } from 'gatsby';
 
-export function SEO({ title }: { title: string }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-          }
-        }
-      }
-    `,
-  );
+interface SEOProps {
+  appTitle: string;
+  pageTitle: string;
+}
 
-  const appTitle: string = site.siteMetadata?.title;
-
+export const SEO: React.FC<SEOProps> = ({ appTitle, pageTitle }) => {
   return (
     <Helmet
-      title={title}
+      title={pageTitle}
       titleTemplate={appTitle ? `%s | ${appTitle}` : undefined}
     />
   );
-}
+};

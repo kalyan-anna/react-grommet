@@ -11,7 +11,7 @@ import { Logo } from '../Logo/Logo';
 import { Link } from 'gatsby';
 
 interface FooterProps {
-  title: string;
+  appTitle: string;
 }
 
 const FooterContent = () => {
@@ -37,10 +37,10 @@ const FooterContent = () => {
   );
 };
 
-const Footer: React.FC<FooterProps> = ({ title }) => {
+const Footer: React.FC<FooterProps> = ({ appTitle: title }) => {
   return (
     <>
-      <GommetFooter background="dark-1" pad="large">
+      <GommetFooter background="dark-1" pad="small">
         <FooterContent />
       </GommetFooter>
       <GommetFooter

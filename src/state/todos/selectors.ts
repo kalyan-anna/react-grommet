@@ -2,6 +2,7 @@ import { createSelector } from '@reduxjs/toolkit';
 import { SortTypeEnum, filterSelectors } from '@state/filter';
 import { RootState } from 'state/store';
 import { PriorityEnum, Todo, TodoStatusEnum } from './types';
+import sortBy from 'lodash/sortBy';
 
 const selectTodosState = (state: RootState) => state.todos;
 
@@ -31,12 +32,13 @@ const selectAllTodos = createSelector(
       todoArr = filterTodos(todoArr, filters.priorities, filters.status);
     }
 
-    return todoArr.sort((a: Todo, b: Todo) => {
-      if (sortType === SortTypeEnum.NAME) {
-        return +(a.title > b.title) - +(a.title < b.title);
-      }
-      return 0;
-    });
+    if (sortType) {
+      return sortBy(todoArr, [
+        sortType === SortTypeEnum.NAME && 'title',
+        sortType === SortTypeEnum.PRIORITY && 'priority',
+      ]) as Todo[];
+    }
+    return todoArr;
   },
 );
 

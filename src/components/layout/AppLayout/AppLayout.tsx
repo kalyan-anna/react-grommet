@@ -7,11 +7,11 @@ import { graphql, useStaticQuery } from 'gatsby';
 import '../../../themes/global.css';
 
 type AppLayoutProperties = {
-  title: string;
+  pageTitle: string;
 };
 
 export const AppLayout: React.FC<AppLayoutProperties> = ({
-  title,
+  pageTitle,
   children,
 }) => {
   const { site } = useStaticQuery(
@@ -31,16 +31,18 @@ export const AppLayout: React.FC<AppLayoutProperties> = ({
   return (
     <Grommet
       theme={theme}
-      full
       style={{
         display: 'flex',
         flexDirection: 'column',
+        minHeight: '100vh',
       }}
     >
-      <SEO title={title} />
-      <Header title={appTitle} />
-      <Main pad="small">{children}</Main>
-      <Footer title={appTitle} />
+      <SEO pageTitle={pageTitle} appTitle={appTitle} />
+      <Header appTitle={appTitle} />
+      <Main pad="small" flex="grow">
+        {children}
+      </Main>
+      <Footer appTitle={appTitle} />
     </Grommet>
   );
 };

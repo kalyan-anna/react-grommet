@@ -6,10 +6,9 @@ import {
   Form,
   Heading,
   Text,
-  TextInput,
 } from 'grommet';
 import { Filter } from 'grommet-icons';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { filterSelectors } from 'state/filter';
 import {

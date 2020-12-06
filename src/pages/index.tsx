@@ -3,7 +3,7 @@ import React from 'react';
 import { AppLayout } from '@layout';
 
 const IndexPage = () => (
-  <AppLayout title="Home">
+  <AppLayout pageTitle="Home">
     <Editor />
   </AppLayout>
 );

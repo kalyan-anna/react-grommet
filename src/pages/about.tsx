@@ -4,7 +4,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <AppLayout title="About">
+    <AppLayout pageTitle="About">
       <Box pad="large">
         <Heading margin="small">About</Heading>
         <div>
