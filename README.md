@@ -43,5 +43,5 @@ UI Improvements
 Accessibility  
 More UI Unit tests 
 CI/CD  
-Performance Bundle Analyzer. 
-Lazy loading components. 
+Performance Bundle Analyzer  
+Lazy loading components  
