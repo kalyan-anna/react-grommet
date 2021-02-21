@@ -8,7 +8,7 @@
   Sample Gatsby / Styled-Component
 </h1>
 
-Sample project based on styled-components
+Sample project based on styled-components (grommet)
 
 ## Cloud
 The application is deployed to cloud.  
